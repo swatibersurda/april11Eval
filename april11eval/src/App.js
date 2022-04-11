@@ -21,10 +21,10 @@ const handleBall =(value)=>{
 }
  
 const t=Math.floor(`${ball/6}`);
-const k= `${ball%6*.1}`
+const k= `${ball%6*1.0}`
 console.log(t);
 console.log(k)
-const m=t+k
+const m=t+k/10
 console.log(m);
   return (
     <div className="App">
@@ -54,7 +54,7 @@ console.log(m);
           Over:{" "}
           <h1 className="overCount">
             {
-              ball/6             // Show Over here in the format: "over.ball" eg: 4.5 means 4th over and 5th ball
+              m           // Show Over here in the format: "over.ball" eg: 4.5 means 4th over and 5th ball
               // if 1 more ball is thrown then over is now 5.0
               // you have to write logic to form this string from current ball number.
             }
