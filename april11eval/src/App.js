@@ -5,6 +5,7 @@ const[score,setScore]=useState(76);
 const[wicket,setWicket]=useState(2);
 const [ball,setBall]=useState(50);
 
+
 const handleScore=(value)=>{
   setScore(score+value)
 
@@ -47,7 +48,7 @@ const handleBall =(value)=>{
           Over:{" "}
           <h1 className="overCount">
             {
-              ball
+              ball/6
               // Show Over here in the format: "over.ball" eg: 4.5 means 4th over and 5th ball
               // if 1 more ball is thrown then over is now 5.0
               // you have to write logic to form this string from current ball number.
