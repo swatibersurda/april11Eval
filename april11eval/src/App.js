@@ -17,8 +17,7 @@ const handleWicket=(value)=>{
 const handleBall =(value)=>{
   setBall(ball+value)
 }
-
-
+ 
 
   return (
     <div className="App">
@@ -79,7 +78,8 @@ const handleBall =(value)=>{
       </div>
 
       {/* If score reaches greater than 100, show text "India Won" without quotes in h1 tag with class name 'status' */}
-     return <h1 className="status">{score>100 ? "india won" :"" }</h1>
+     <h1 className="status">{score>100 ? "india won" :"" }</h1>
+     
     </div>
   );
 }
