@@ -1,4 +1,27 @@
+import { useState,useEffect, useContext } from "react";
+import axios from "axios";
+import { AuthContext } from "../Context/AuthContext";
 export const Home = () => {
+
+  const [usertotal,settotalUserList]=useState([]);
+  const {totalterminated,totalpermoted,totalNew}=useContext(AuthContext);
+  
+ useEffect(()=>{
+
+     axios.get("http://localhost:8080/employee").then((res)=>{
+       console.log(res.data,"home");
+       settotalUserList(res.data.length)
+     })
+
+
+ },[]);
+
+//  const {totalterminated,totalpermoted,totalNew}=useContext(AuthContext)
+
+
+  //  console.log(usertotal)
+
+
   // create statistics for user.
   // get Total user count from DB,
   // other fields are in memory values stored in context API.
@@ -17,16 +40,16 @@ export const Home = () => {
       <div className="home">
         <span>Stats</span>
         <div>
-          Total Employees<span className="totalemp"></span>
+          Total Employees<span className="totalemp">:{usertotal}</span>
         </div>
         <div>
-          Total Terminated: <span className="total_terminated"></span>
+          Total Terminated: <span className="total_terminated">{totalterminated}</span>
         </div>
         <div>
-          Total Promoted: <span className="total_promoted"></span>
+          Total Promoted: <span className="total_promoted">{totalpermoted}</span>
         </div>
         <div>
-          Total New: <span className="total_new"></span>
+          Total New: <span className="total_new">{totalNew}</span>
         </div>
       </div>
     </>

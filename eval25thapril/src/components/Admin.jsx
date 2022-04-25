@@ -1,7 +1,33 @@
+import { useState } from "react";
+
 export const Admin = () => {
+   const [empcre,setEmpcreate]=useState({
+    "employee_name":"",
+    "employee_id":"",
+    "title":"",
+    "salary":"",
+    "image":"",
+    "username":"",
+    "password":'',
+    "tasks":"",
+    "status":"",
+    "team":""
+
+     
+
+
+   })
+          const handleValue=(e)=>{
+            console.log(e.target);
+
+          }
+
+
+
+
   return (
     <form className="createEmployee">
-      <input type="text" placeholder="Employee Name" name="employee_name" />
+      <input type="text" placeholder="Employee Name" name="employee_name"  onClick={handleValue}/>
       <input type="text" placeholder="Employee id" name="employee_id" />
       <select name="title">
         <option value="intern">Intern</option>
